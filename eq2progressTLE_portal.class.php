@@ -253,7 +253,7 @@ class eq2progresstle_portal extends portal_generic {
 		$kdate = "";
 		if (($this->config('eq2progresstle_date')) == TRUE ) 		
 		{ ($stamp = date('m/d/Y', $achieve[$a]['completedtimestamp']));	 
-	      ($kdate = '<font color="white">'.$stamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike></font>'); }
+	        ($kdate = '<font color="white">'.$stamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike></font>'); }
 		$acid = $achieve[$a]['id'];
 		//Check which were killed
 		if ($acid == '755589334')  {$shattered = $shattered + 1; $sh1 = $kdate.$this->killed($sh1);}
@@ -335,12 +335,10 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '3570058315') {$velious = $velious + 1; $dov20 = $kdate.$this->killed($dov20);}
 		if ($acid == '4145063722') {$velious = $velious + 1; $dov21 = $kdate.$this->killed($dov21);}
 		if ($acid == '528786370')  {$velious = $velious + 1; $dov22 = $kdate.$this->killed($dov22);}
-		
 		if ($acid == '1622583242') {$chains = $chains + 1; $coe1 = $kdate.$this->killed($coe1);}
 		if ($acid == '2815791137') {$chains = $chains + 1; $coe2 = $kdate.$this->killed($coe2);}
 		if ($acid == '117381414')  {$chains = $chains + 1; $coe3 = $kdate.$this->killed($coe3);}
 		if ($acid == '3473349988') {$chains = $chains + 1; $coe4 = $kdate.$this->killed($coe4);}
-		
 		if ($acid == '2968476469') {$arena = $arena + 1; $arena1 = $kdate.$this->killed($arena1);}
 		if ($acid == '1979157433') {$arena = $arena + 1; $arena2 = $kdate.$this->killed($arena2);}
 		if ($acid == '593827632') {$arena = $arena + 1; $arena3 = $kdate.$this->killed($arena3);}
@@ -428,7 +426,7 @@ class eq2progresstle_portal extends portal_generic {
 		$fate = ($tkillslist[58].$tkillslist[59].$tkillslist[60].$tkillslist[61].$tkillslist[62].$tkillslist[63].$tkillslist[64]);
 		$zonetotal9 = ($tkillslist[65]);
 		$dest = ($tkillslist[66].$tkillslist[67].$tkillslist[68].$tkillslist[69].$tkillslist[70].$tkillslist[71].$tkillslist[72].$tkillslist[73].$tkillslist[74].$tkillslist[75].$tkillslist[76].$tkillslist[77].$tkillslist[78].$tkillslist[79].$tkillslist[80].$tkillslist[81].$tkillslist[82].$tkillslist[83].$tkillslist[84].$tkillslist[85].$tkillslist[86].$tkillslist[87]);
-	    $zonetotal10 = ($tkillslist[88]);
+	        $zonetotal10 = ($tkillslist[88]);
 		$chain = ($tkillslist[89].$tkillslist[90].$tkillslist[91].$tkillslist[92]);
 		$zonetotal11 = ($tkillslist[93]);
 		$aren = ($tkillslist[94].$tkillslist[95].$tkillslist[96].$tkillslist[97].$tkillslist[98].$tkillslist[99].$tkillslist[100].$tkillslist[101].$tkillslist[102].$tkillslist[103]);
@@ -442,7 +440,7 @@ class eq2progresstle_portal extends portal_generic {
 		$zonetotal15 = ($tkillslist[138]);
 		$power = ($tkillslist[139].$tkillslist[140].$tkillslist[141].$tkillslist[142]);
 		$zonetotal16 = ($tkillslist[143]);
-        $zonename1 = $shval; 	      $zonemax1 = $shmax;          $zonetip1 = $vanilla;
+                $zonename1 = $shval; 	      $zonemax1 = $shmax;          $zonetip1 = $vanilla;
 		$zonename2 = $ssval; 	      $zonemax2 = $ssmax;          $zonetip2 = $sunder;
 		$zonename3 = $dfval;  	      $zonemax3 = $dfmax;          $zonetip3 = $flame;
 		$zonename4 = $fdval; 	      $zonemax4 = $fdmax;          $zonetip4 = $fall;
