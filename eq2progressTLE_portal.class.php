@@ -178,149 +178,74 @@ class eq2progresstle_portal extends portal_generic {
 		if (($this->config('eq2progresstle_date')) == TRUE ) 		
 		{ ($spacer = "Not Killed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"); }
 		$shval=$this->user->lang('eq2progresstle_f_eq2progresstle_shattered');
-		$sh1=$spacer.'<font color="white">Archlich Udalan</font><br>'; 
-		$sh2=$spacer.'<font color="white">Darathar</font><br>';		
-		$sh3=$spacer.'<font color="white">K\'Dal the Deceiver</font><br>'; 
-		$sh4=$spacer.'<font color="white">King Drayek</font><br>';		
-		$sh5=$spacer.'<font color="white">King Zalak</font><br>'; 
-		$sh6=$spacer.'<font color="white">Overlord Oxulius</font><br>';
-		$sh7=$spacer.'<font color="white">Rognog the Angler</font><br>'; 
-		$sh8=$spacer.'<font color="white">Venekor</font><br>';
+		$sh1=$spacer.'<font color="white">Archlich Udalan</font><br>'; $sh2=$spacer.'<font color="white">Darathar</font><br>';		
+		$sh3=$spacer.'<font color="white">K\'Dal the Deceiver</font><br>'; $sh4=$spacer.'<font color="white">King Drayek</font><br>';	
+		$sh5=$spacer.'<font color="white">King Zalak</font><br>'; $sh6=$spacer.'<font color="white">Overlord Oxulius</font><br>';
+		$sh7=$spacer.'<font color="white">Rognog the Angler</font><br>'; $sh8=$spacer.'<font color="white">Venekor</font><br>';
 		$sh9=$spacer.'<font color="white">Vox</font><br>';
 		$ssval=$this->user->lang('eq2progresstle_f_eq2progresstle_splitpaw');
-		$ss1=$spacer.'<font color="white">Faroth Mal</font><br>'; 
-		$ss2=$spacer.'<font color="white">Skoam Anvilpaw</font><br>';		
+		$ss1=$spacer.'<font color="white">Faroth Mal</font><br>'; $ss2=$spacer.'<font color="white">Skoam Anvilpaw</font><br>';		
 		$dfval=$this->user->lang('eq2progresstle_f_eq2progresstle_desert');
-		$df1=$spacer.'<font color="white">Ahk\'Min Rhoen</font><br>'; 
-		$df2=$spacer.'<font color="white">Arazul, Hand of the Godking</font><br>';
-		$df3=$spacer.'<font color="white">Barakah & Siyamak</font><br>'; 
-		$df4=$spacer.'<font color="white">Djinn Master</font><br>';
-		$df5=$spacer.'<font color="white">Godking Anuk</font><br>'; 
-		$df6=$spacer.'<font color="white">Lathena</font><br>';		
-		$df7=$spacer.'<font color="white">Lockjaw</font><br>'; 
-		$df8=$spacer.'<font color="white">The Black Queen</font><br>';		
-		$fdval=$this->user->lang('eq2progresstle_f_eq2progresstle_fallen');
-		$fd1=$spacer.'<font color="white">Chel\'Drak</font><br>'; 
-		$fd2=$spacer.'<font color="white">Xux\'laio</font><br>';
-		$fd3=$spacer.'<font color="white">Bonesnapper</font><br>';	
-		$ksval=$this->user->lang('eq2progresstle_f_eq2progresstle_kingdom');
-		$ks1=$spacer.'<font color="white">Harla Dar</font><br>'; 
-		$ks2=$spacer.'<font color="white">Pantrilla</font><br>';		
-		$ks3=$spacer.'<font color="white">Sharti & Ireth</font><br>'; 
-		$ks4=$spacer.'<font color="white">Talendor & Gorenaire</font><br>';	
-		$ks5=$spacer.'<font color="white">Tarinax</font><br>';	
-		$ks6=$spacer.'<font color="white">Venekor</font><br>';	
-		$ks7=$spacer.'<font color="white">Vilucidae</font><br>';	
-		$ks8=$spacer.'<font color="white">Vyemm</font><br>';	
-		$efval=$this->user->lang('eq2progresstle_f_eq2progresstle_faydwer');
-		$ef1=$spacer.'<font color="white">Clockwork Menace</font><br>'; 
-		$ef2=$spacer.'<font color="white">Malkonis D\'Morte</font><br>';		
-		$ef3=$spacer.'<font color="white">Mayong Mistmoore (Sanctum)</font><br>'; 
-		$ef4=$spacer.'<font color="white">Mayong Mistmoore (Throne)</font><br>';		
-		$ef5=$spacer.'<font color="white">Wuoshi</font><br>'; 
+		$df1=$spacer.'<font color="white">Ahk\'Min Rhoen</font><br>'; $df2=$spacer.'<font color="white">Arazul, Hand of the Godking</font><br>'; $df3=$spacer.'<font color="white">Barakah & Siyamak</font><br>'; 
+		$df4=$spacer.'<font color="white">Djinn Master</font><br>'; $df5=$spacer.'<font color="white">Godking Anuk</font><br>'; 
+		$df6=$spacer.'<font color="white">Lathena</font><br>'; $df7=$spacer.'<font color="white">Lockjaw</font><br>'; 
+		$df8=$spacer.'<font color="white">The Black Queen</font><br>'; $fdval=$this->user->lang('eq2progresstle_f_eq2progresstle_fallen');
+		$fd1=$spacer.'<font color="white">Chel\'Drak</font><br>'; $fd2=$spacer.'<font color="white">Xux\'laio</font><br>';
+		$fd3=$spacer.'<font color="white">Bonesnapper</font><br>'; $ksval=$this->user->lang('eq2progresstle_f_eq2progresstle_kingdom');
+		$ks1=$spacer.'<font color="white">Harla Dar</font><br>'; $ks2=$spacer.'<font color="white">Pantrilla</font><br>';		
+		$ks3=$spacer.'<font color="white">Sharti & Ireth</font><br>'; $ks4=$spacer.'<font color="white">Talendor & Gorenaire</font><br>';$ks5=$spacer.'<font color="white">Tarinax</font><br>';	$ks6=$spacer.'<font color="white">Venekor</font><br>';	
+		$ks7=$spacer.'<font color="white">Vilucidae</font><br>'; $ks8=$spacer.'<font color="white">Vyemm</font><br>';	
+		$efval=$this->user->lang('eq2progresstle_f_eq2progresstle_faydwer'); 
+		$ef1=$spacer.'<font color="white">Clockwork Menace</font><br>'; $ef2=$spacer.'<font color="white">Malkonis D\'Morte</font><br>'; 
+		$ef3=$spacer.'<font color="white">Mayong Mistmoore (Sanctum)</font><br>'; $ef4=$spacer.'<font color="white">Mayong Mistmoore (Throne)</font><br>'; $ef5=$spacer.'<font color="white">Wuoshi</font><br>'; 
 		$rokval=$this->user->lang('eq2progresstle_f_eq2progresstle_kunark');
-		$rok1=$spacer.'<font color="white">Byzola</font><br>'; 
-		$rok2=$spacer.'<font color="white">Imzok\'s Revenge</font><br>';	
-		$rok3=$spacer.'<font color="white">Leviathan</font><br>'; 
-		$rok4=$spacer.'<font color="white">Pawbuster</font><br>';	
-		$rok5=$spacer.'<font color="white">Phara Dar</font><br>'; 
-		$rok6=$spacer.'<font color="white">Selrach Di\'Zok</font><br>';
-		$rok7=$spacer.'<font color="white">Tairiza</font><br>'; 
-		$rok8=$spacer.'<font color="white">Trakanon</font><br>';
-		$rok9=$spacer.'<font color="white">Venril Sathir</font><br>';	
-		$tsoval=$this->user->lang('eq2progresstle_f_eq2progresstle_odyssey');
-		$tso1=$spacer.'<font color="white">Anashti Sul</font><br>'; 
-		$tso2=$spacer.'<font color="white">Gynok Moltor</font><br>';	
-		$tso3=$spacer.'<font color="white">Miragul</font><br>'; 
-		$tso4=$spacer.'<font color="white">Munzok</font><br>';	
-		$tso5=$spacer.'<font color="white">Warlord Ykesha</font><br>'; 
-		$tso6=$spacer.'<font color="white">Zarrakon</font><br>';
+		$rok1=$spacer.'<font color="white">Byzola</font><br>'; $rok2=$spacer.'<font color="white">Imzok\'s Revenge</font><br>';	
+		$rok3=$spacer.'<font color="white">Leviathan</font><br>'; $rok4=$spacer.'<font color="white">Pawbuster</font><br>';	
+		$rok5=$spacer.'<font color="white">Phara Dar</font><br>'; $rok6=$spacer.'<font color="white">Selrach Di\'Zok</font><br>';
+		$rok7=$spacer.'<font color="white">Tairiza</font><br>'; $rok8=$spacer.'<font color="white">Trakanon</font><br>';
+		$rok9=$spacer.'<font color="white">Venril Sathir</font><br>'; $tsoval=$this->user->lang('eq2progresstle_f_eq2progresstle_odyssey');
+		$tso1=$spacer.'<font color="white">Anashti Sul</font><br>'; $tso2=$spacer.'<font color="white">Gynok Moltor</font><br>';	
+		$tso3=$spacer.'<font color="white">Miragul</font><br>'; $tso4=$spacer.'<font color="white">Munzok</font><br>';	
+		$tso5=$spacer.'<font color="white">Warlord Ykesha</font><br>'; $tso6=$spacer.'<font color="white">Zarrakon</font><br>';
 		$sfval=$this->user->lang('eq2progresstle_f_eq2progresstle_sentinel');
-		$sf1=$spacer.'<font color="white">Master Yael</font><br>'; 
-		$sf2=$spacer.'<font color="white">Perah\'Celsis</font><br>'; 
-		$sf3=$spacer.'<font color="white">Roehn Theer</font><br>'; 
-		$sf4=$spacer.'<font color="white">Roehn Theer (HM)</font><br>';
-		$sf5=$spacer.'<font color="white">Toxxulia</font><br>'; 
-		$sf6=$spacer.'<font color="white">Vuulan</font><br>'; 
+		$sf1=$spacer.'<font color="white">Master Yael</font><br>'; $sf2=$spacer.'<font color="white">Perah\'Celsis</font><br>'; 
+		$sf3=$spacer.'<font color="white">Roehn Theer</font><br>'; $sf4=$spacer.'<font color="white">Roehn Theer (HM)</font><br>';
+		$sf5=$spacer.'<font color="white">Toxxulia</font><br>'; $sf6=$spacer.'<font color="white">Vuulan</font><br>'; 
 		$sf7=$spacer.'<font color="white">Waansu</font><br>'; 
 		$dovval=$this->user->lang('eq2progresstle_f_eq2progresstle_velious'); 
-		$dov1=$spacer.'<font color="white">Dozekar</font><br>'; 
-		$dov2=$spacer.'<font color="white">Dozekar (Challenge)</font><br>'; 
-		$dov3=$spacer.'<font color="white">General Teku</font><br>'; 
-		$dov4=$spacer.'<font color="white">Honvar the Earthcrasher</font><br>';
-		$dov5=$spacer.'<font color="white">Kildrukaun the Ancient</font><br>';
-		$dov6=$spacer.'<font color="white">King Tormax</font><br>'; 
-		$dov7=$spacer.'<font color="white">King Tormax (Challenge)</font><br>'; 
-		$dov8=$spacer.'<font color="white">Kraytok</font><br>'; 
-		$dov9=$spacer.'<font color="white">Kraytok (Challenge)</font><br>'; 
-		$dov10=$spacer.'<font color="white">Psyllon\'Ris\'</font><br>'; 
-		$dov11=$spacer.'<font color="white">Sevalak of Storms</font><br>'; 
-		$dov12=$spacer.'<font color="white">Soren the Vindicator</font><br>';
-		$dov13=$spacer.'<font color="white">Statue of Rallos Zek</font><br>'; 
-		$dov14=$spacer.'<font color="white">Statue of Rallos Zek (Challenge)</font><br>'; 
-		$dov15=$spacer.'<font color="white">Sullon Zek</font><br>'; 
-		$dov16=$spacer.'<font color="white">Sullon Zek (Challenge)</font><br>'; 
-		$dov17=$spacer.'<font color="white">Tallon Zek</font><br>'; 
-		$dov18=$spacer.'<font color="white">Tallon Zek (Challenge)</font><br>'; 
-		$dov19=$spacer.'<font color="white">Vallon Zek</font><br>'; 
-		$dov20=$spacer.'<font color="white">Vallon Zek (Challenge)</font><br>';
-		$dov21=$spacer.'<font color="white">Vrewwx Icyheart</font><br>';
-		$dov22=$spacer.'<font color="white">Vyskudra the Ancient</font><br>';
+		$dov1=$spacer.'<font color="white">Dozekar</font><br>'; $dov2=$spacer.'<font color="white">Dozekar (Challenge)</font><br>'; 
+		$dov3=$spacer.'<font color="white">General Teku</font><br>'; $dov4=$spacer.'<font color="white">Honvar the Earthcrasher</font><br>'; $dov5=$spacer.'<font color="white">Kildrukaun the Ancient</font><br>';
+		$dov6=$spacer.'<font color="white">King Tormax</font><br>'; $dov7=$spacer.'<font color="white">King Tormax (Challenge)</font><br>'; $dov8=$spacer.'<font color="white">Kraytok</font><br>'; $dov9=$spacer.'<font color="white">Kraytok (Challenge)</font><br>'; 
+		$dov10=$spacer.'<font color="white">Psyllon\'Ris\'</font><br>'; $dov11=$spacer.'<font color="white">Sevalak of Storms</font><br>'; 
+		$dov12=$spacer.'<font color="white">Soren the Vindicator</font><br>'; $dov13=$spacer.'<font color="white">Statue of Rallos Zek</font><br>'; $dov14=$spacer.'<font color="white">Statue of Rallos Zek (Challenge)</font><br>'; 
+		$dov15=$spacer.'<font color="white">Sullon Zek</font><br>'; $dov16=$spacer.'<font color="white">Sullon Zek (Challenge)</font><br>'; $dov17=$spacer.'<font color="white">Tallon Zek</font><br>'; $dov18=$spacer.'<font color="white">Tallon Zek (Challenge)</font><br>'; $dov19=$spacer.'<font color="white">Vallon Zek</font><br>'; $dov20=$spacer.'<font color="white">Vallon Zek (Challenge)</font><br>'; $dov21=$spacer.'<font color="white">Vrewwx Icyheart</font><br>'; $dov22=$spacer.'<font color="white">Vyskudra the Ancient</font><br>';
 		$coeval=$this->user->lang('eq2progresstle_f_eq2progresstle_chains'); 
-		$coe1=$spacer.'<font color="white">Amalgamon</font><br>'; 
-		$coe2=$spacer.'<font color="white">Baroddas & Baelon</font><br>';
-		$coe3=$spacer.'<font color="white">Drinal 4 Soulwells</font><br>'; 
-		$coe4=$spacer.'<font color="white">Omugra, Thazarus, & Vuzalg</font><br>';
-		$arenaval=$this->user->lang('eq2progresstle_f_eq2progresstle_arena');
-		$arena1=$spacer.'<font color="white">Bristlebane</font><br>';
-		$arena2=$spacer.'<font color="white">Drinal</font><br>';
-		$arena3=$spacer.'<font color="white">Mithaniel Marr</font><br>';
-		$arena4=$spacer.'<font color="white">Prexus</font><br>';
-		$arena5=$spacer.'<font color="white">Rodcet Nife</font><br>';
-		$arena6=$spacer.'<font color="white">Solusek Ro</font><br>';
-		$arena7=$spacer.'<font color="white">Sullon Zek</font><br>';
-		$arena8=$spacer.'<font color="white">Tallon Zek</font><br>';
-		$arena9=$spacer.'<font color="white">Tunare</font><br>';
-		$arena10=$spacer.'<font color="white">Vallon Zek</font><br>';
+		$coe1=$spacer.'<font color="white">Amalgamon</font><br>'; $coe2=$spacer.'<font color="white">Baroddas & Baelon</font><br>';
+		$coe3=$spacer.'<font color="white">Drinal 4 Soulwells</font><br>'; $coe4=$spacer.'<font color="white">Omugra, Thazarus, & Vuzalg</font><br>';
+		$arenaval=$this->user->lang('eq2progresstle_f_eq2progresstle_arena'); 
+		$arena1=$spacer.'<font color="white">Bristlebane</font><br>'; $arena2=$spacer.'<font color="white">Drinal</font><br>';
+		$arena3=$spacer.'<font color="white">Mithaniel Marr</font><br>'; $arena4=$spacer.'<font color="white">Prexus</font><br>';
+		$arena5=$spacer.'<font color="white">Rodcet Nife</font><br>'; $arena6=$spacer.'<font color="white">Solusek Ro</font><br>';
+		$arena7=$spacer.'<font color="white">Sullon Zek</font><br>'; $arena8=$spacer.'<font color="white">Tallon Zek</font><br>';
+		$arena9=$spacer.'<font color="white">Tunare</font><br>'; $arena10=$spacer.'<font color="white">Vallon Zek</font><br>';
 		$contval=$this->user->lang('eq2progresstle_f_eq2progresstle_contested');
-		$cont1=$spacer.'<font color="white">Drinal</font><br>';
-		$cont2=$spacer.'<font color="white">Mithaniel Marr</font><br>';
-		$cont3=$spacer.'<font color="white">Prexus</font><br>';
-		$cont4=$spacer.'<font color="white">Rodcet Nife</font><br>';
-		$cont5=$spacer.'<font color="white">Solusek Ro</font><br>';
-		$cont6=$spacer.'<font color="white">Sullon Zek</font><br>';
-		$cont7=$spacer.'<font color="white">Tallon Zek</font><br>';
-		$cont8=$spacer.'<font color="white">Tunare</font><br>';
+		$cont1=$spacer.'<font color="white">Drinal</font><br>'; $cont2=$spacer.'<font color="white">Mithaniel Marr</font><br>';
+		$cont3=$spacer.'<font color="white">Prexus</font><br>'; $cont4=$spacer.'<font color="white">Rodcet Nife</font><br>';
+		$cont5=$spacer.'<font color="white">Solusek Ro</font><br>'; $cont6=$spacer.'<font color="white">Sullon Zek</font><br>';
+		$cont7=$spacer.'<font color="white">Tallon Zek</font><br>'; $cont8=$spacer.'<font color="white">Tunare</font><br>';
 		$cont9=$spacer.'<font color="white">Vallon Zek</font><br>';
 		$tovval=$this->user->lang('eq2progresstle_f_eq2progresstle_veeshan');
-		$tov1=$spacer.'<font color="white">Bristlebane</font><br>';
-		$tov2=$spacer.'<font color="white">Draazak the Ancient</font><br>';
-		$tov3=$spacer.'<font color="white">Exarch Lorokai the Unliving</font><br>';
-		$tov4=$spacer.'<font color="white">Fabled Mutagenic Outcast</font><br>';
-		$tov5=$spacer.'<font color="white">Fabled Three Princes</font><br>';
-		$tov6=$spacer.'<font color="white">Fabled Vyemm & Alzid Prime</font><br>';
-		$tov7=$spacer.'<font color="white">Roehn Theer - Ages End</font><br>';
-		$tov8=$spacer.'<font color="white">Roehn Theer - Ages End (HM)</font><br>';
-		$tov9=$spacer.'<font color="white">The Crumbling Emperor</font><br>';
-		$tov10=$spacer.'<font color="white">Vulak\'Aerr the Dreadscale</font><br>';
+		$tov1=$spacer.'<font color="white">Bristlebane</font><br>'; $tov2=$spacer.'<font color="white">Draazak the Ancient</font><br>';
+		$tov3=$spacer.'<font color="white">Exarch Lorokai the Unliving</font><br>'; $tov4=$spacer.'<font color="white">Fabled Mutagenic Outcast</font><br>'; $tov5=$spacer.'<font color="white">Fabled Three Princes</font><br>'; $tov6=$spacer.'<font color="white">Fabled Vyemm & Alzid Prime</font><br>'; $tov7=$spacer.'<font color="white">Roehn Theer - Ages End</font><br>';
+		$tov8=$spacer.'<font color="white">Roehn Theer - Ages End (HM)</font><br>'; $tov9=$spacer.'<font color="white">The Crumbling Emperor</font><br>'; $tov10=$spacer.'<font color="white">Vulak\'Aerr the Dreadscale</font><br>';
 		$tov11=$spacer.'<font color="white">Zlandicar</font><br>';
 		$aomval=$this->user->lang('eq2progresstle_f_eq2progresstle_altar');
-		$aom1=$spacer.'<font color="white">Arch Lich Rhag\'Zadune</font><br>';
-		$aom2=$spacer.'<font color="white">Baz the Illusionist</font><br>';
-		$aom3=$spacer.'<font color="white">Captain Krasnok</font><br>';
-		$aom4=$spacer.'<font color="white">Construct of Malice</font><br>';
-		$aom5=$spacer.'<font color="white">Grethah the Frenzied</font><br>';
-		$aom6=$spacer.'<font color="white">Kildiun the Drunkard</font><br>';
-		$aom7=$spacer.'<font color="white">Malkonis D\'Morte</font><br>';
-		$aom8=$spacer.'<font color="white">Malkonis D\'Morte (Challenge)</font><br>';
-		$aom9=$spacer.'<font color="white">Perador the Mighty</font><br>';
-		$aom10=$spacer.'<font color="white">Primordial Ritualist Villandre V\'Zher</font><br>';
-		$aom11=$spacer.'<font color="white">The Crumbling Icon</font><br>';
+		$aom1=$spacer.'<font color="white">Arch Lich Rhag\'Zadune</font><br>'; $aom2=$spacer.'<font color="white">Baz the Illusionist</font><br>'; $aom3=$spacer.'<font color="white">Captain Krasnok</font><br>';
+		$aom4=$spacer.'<font color="white">Construct of Malice</font><br>'; $aom5=$spacer.'<font color="white">Grethah the Frenzied</font><br>'; $aom6=$spacer.'<font color="white">Kildiun the Drunkard</font><br>';
+		$aom7=$spacer.'<font color="white">Malkonis D\'Morte</font><br>'; $aom8=$spacer.'<font color="white">Malkonis D\'Morte (Challenge)</font><br>'; $aom9=$spacer.'<font color="white">Perador the Mighty</font><br>'; $aom10=$spacer.'<font color="white">Primordial Ritualist Villandre V\'Zher</font><br>'; $aom11=$spacer.'<font color="white">The Crumbling Icon</font><br>';
 		$popval=$this->user->lang('eq2progresstle_f_eq2progresstle_precipice');
-		$pop1=$spacer.'<font color="white">Cazic-Thule</font><br>';
-		$pop2=$spacer.'<font color="white">Fennin Ro</font><br>';
-		$pop3=$spacer.'<font color="white">Karana</font><br>';
-		$pop4=$spacer.'<font color="white">The Tribunal</font><br>';
+		$pop1=$spacer.'<font color="white">Cazic-Thule</font><br>'; $pop2=$spacer.'<font color="white">Fennin Ro</font><br>';
+		$pop3=$spacer.'<font color="white">Karana</font><br>'; $pop4=$spacer.'<font color="white">The Tribunal</font><br>';
 		//Check which have been killed
 		$tkillslist = $this->pdc->get('portal.module.eq2progresstle.'.$this->root_path);
 				if (!$tkillslist){
@@ -340,11 +265,6 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '2217589756')  {$shattered = $shattered + 1; $sh7 = $kdate.$this->killed($sh7);}
 		if ($acid == '1277336788')  {$shattered = $shattered + 1; $sh8 = $kdate.$this->killed($sh8);}
 		if ($acid == '1175319967')  {$shattered = $shattered + 1; $sh9 = $kdate.$this->killed($sh9);}
-		
-		
-		
-		
-		
 		if ($acid == '3758088138') {$splitpaw = $splitpaw + 1; $ss1 = $kdate.$this->killed($ss1);}
 		if ($acid == '3522306503') {$splitpaw = $splitpaw + 1; $ss2 = $kdate.$this->killed($ss2);}
 		if ($acid == '4152187954') {$desert = $desert + 1; $df1 = $kdate.$this->killed($df1);}
@@ -431,7 +351,6 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '3543924985') {$arena = $arena + 1; $arena8 = $kdate.$this->killed($arena8);}
 		if ($acid == '1253692288') {$arena = $arena + 1; $arena9 = $kdate.$this->killed($arena9);}
 		if ($acid == '3620327620') {$arena = $arena + 1; $arena10 = $kdate.$this->killed($arena10);}
-		
 		if ($acid == '2417016352') {$contested = $contested + 1; $cont1 = $kdate.$this->killed($cont1);}
 		if ($acid == '42226058')   {$contested = $contested + 1; $cont2 = $kdate.$this->killed($cont2);}
 		if ($acid == '4186719351') {$contested = $contested + 1; $cont3 = $kdate.$this->killed($cont3);}
@@ -441,7 +360,6 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '4035705456') {$contested = $contested + 1; $cont7 = $kdate.$this->killed($cont7);}
 		if ($acid == '2942232089') {$contested = $contested + 1; $cont8 = $kdate.$this->killed($cont8);}
 		if ($acid == '4101909069') {$contested = $contested + 1; $cont9 = $kdate.$this->killed($cont9);}
-		
 		if ($acid == '2371639852') {$veeshan = $veeshan + 1; $tov1 = $kdate.$this->killed($tov1);}
 		if ($acid == '2828051041') {$veeshan = $veeshan + 1; $tov2 = $kdate.$this->killed($tov2);}
 		if ($acid == '3607119179') {$veeshan = $veeshan + 1; $tov3 = $kdate.$this->killed($tov3);}
@@ -453,7 +371,6 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '3296875551') {$veeshan = $veeshan + 1; $tov9 = $kdate.$this->killed($tov9);}
 		if ($acid == '1302823374') {$veeshan = $veeshan + 1; $tov10 = $kdate.$this->killed($tov10);}
 		if ($acid == '616943266')  {$veeshan = $veeshan + 1; $tov11 = $kdate.$this->killed($tov11);}
-		
 		if ($acid == '3928176072') {$altar = $altar + 1; $aom1 = $kdate.$this->killed($aom1);}
 		if ($acid == '3296712239') {$altar = $altar + 1; $aom2 = $kdate.$this->killed($aom2);}
 		if ($acid == '1748957509') {$altar = $altar + 1; $aom3 = $kdate.$this->killed($aom3);}
@@ -465,7 +382,6 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '2955610207') {$altar = $altar + 1; $aom9 = $kdate.$this->killed($aom9);}
 		if ($acid == '1434280382' or $acid == '2017956309'){$altar = $altar + 1; $aom10 = $kdate.$this->killed($aom10);}
 		if ($acid == '3742464779') {$altar = $altar + 1; $aom11 = $kdate.$this->killed($aom11);}
-		
 		if ($acid == '3312622728') {$precipice = $precipice + 1; $pop1 = $kdate.$this->killed($pop1);}
 		if ($acid == '1264497483') {$precipice = $precipice + 1; $pop2 = $kdate.$this->killed($pop2);}
 		if ($acid == '2302657105') {$precipice = $precipice + 1; $pop3 = $kdate.$this->killed($pop3);}
