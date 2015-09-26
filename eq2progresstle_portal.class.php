@@ -16,7 +16,8 @@
  * $Id: eq2progresstle_portal.class.php 00001 2015-08-23 19:20:34Z Darkmaeg $
  * Modified Version of Hoofy's mybars progression module
  * This version populates the guild raid achievements from the Data Api
- * 
+ *
+ * V1.2 Minor fix
  * V1.1 Added Avatar Brell Serilius
  * V1.0 Initial Release - TLE Version
  */
@@ -29,7 +30,7 @@ class eq2progresstle_portal extends portal_generic {
 	protected static $path		= 'eq2progresstle';
 	protected static $data		= array(
 		'name'			=> 'EQ2 TLE Progression',
-		'version'		=> '1.1',
+		'version'		=> '1.2',
 		'author'		=> 'Darkmaeg',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Everquest 2 TLE Progression',
