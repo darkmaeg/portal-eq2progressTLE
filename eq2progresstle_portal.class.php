@@ -16,8 +16,8 @@
  * $Id: eq2progresstle_portal.class.php 00001 2015-08-23 19:20:34Z Darkmaeg $
  * Modified Version of Hoofy's mybars progression module
  * This version populates the guild raid achievements from the Data Api
- *
- * V1.2 Minor fix
+ * 
+ * V1.2 Minor Fix
  * V1.1 Added Avatar Brell Serilius
  * V1.0 Initial Release - TLE Version
  */
@@ -29,14 +29,14 @@ if ( !defined('EQDKP_INC') ){
 class eq2progresstle_portal extends portal_generic {
 	protected static $path		= 'eq2progresstle';
 	protected static $data		= array(
-		'name'			=> 'EQ2 TLE Progression',
+		'name'			=> 'EQ2 Progression TLE',
 		'version'		=> '1.2',
 		'author'		=> 'Darkmaeg',
+		'icon'			=> 'fa-bar-chart-o',
 		'contact'		=> EQDKP_PROJECT_URL,
-		'description'	=> 'Everquest 2 TLE Progression',
+		'description'	=> 'Everquest 2 Progression TLE',
 		'multiple'		=> false,
 		'lang_prefix'	=> 'eq2progresstle_'
-		
 	);
 	protected static $positions = array('middle', 'left1', 'left2', 'right', 'bottom');
 	protected static $install	= array(
@@ -44,7 +44,6 @@ class eq2progresstle_portal extends portal_generic {
 		'defaultposition'	=> 'right',
 		'defaultnumber'		=> '7',
 	);
-	
 	protected static $apiLevel = 20;
 	public function get_settings($state) {
 			$settings = array(
@@ -387,9 +386,7 @@ class eq2progresstle_portal extends portal_generic {
 		if ($acid == '1264497483') {$precipice = $precipice + 1; $pop3 = $kdate.$this->killed($pop3);}
 		if ($acid == '2302657105') {$precipice = $precipice + 1; $pop4 = $kdate.$this->killed($pop4);}
 		if ($acid == '3211824092') {$precipice = $precipice + 1; $pop5 = $kdate.$this->killed($pop5);}
-		
 		}
-		
 		//cache it
 		$tkillslist = array($sh1,$sh2,$sh3,$sh4,$sh5,$sh6,$sh7,$sh8,$sh9,$shattered,
 						   $ss1,$ss2,$splitpaw,
@@ -505,5 +502,4 @@ class eq2progresstle_portal extends portal_generic {
 		return new htooltip('eq2progresstle_tt'.$num, $tooltipopts);
 	}
 }
-
 ?>
