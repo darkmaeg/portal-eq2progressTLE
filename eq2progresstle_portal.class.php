@@ -17,6 +17,7 @@
  * Modified Version of Hoofy's mybars progression module
  * This version populates the guild raid achievements from the Data Api
  * 
+ * V1.3 Fixed Bug with Date Killed
  * V1.2 Minor Fix
  * V1.1 Added Avatar Brell Serilius
  * V1.0 Initial Release - TLE Version
@@ -30,7 +31,7 @@ class eq2progresstle_portal extends portal_generic {
 	protected static $path		= 'eq2progresstle';
 	protected static $data		= array(
 		'name'			=> 'EQ2 Progression TLE',
-		'version'		=> '1.2',
+		'version'		=> '1.3',
 		'author'		=> 'Darkmaeg',
 		'icon'			=> 'fa-bar-chart-o',
 		'contact'		=> EQDKP_PROJECT_URL,
@@ -167,13 +168,13 @@ class eq2progresstle_portal extends portal_generic {
 		if(!is_object($this->game->obj['daybreak'])) return "";
 		$progdata = $this->game->obj['daybreak']->guildinfo($this->config->get('guildtag'), $this->config->get('uc_servername'), false);
 		$achieve  = $progdata['guild_list'][0]['achievement_list'];	
-		$ktot = count($achieve);
+		$tktot = count($achieve);
 		$this->game->new_object('eq2_daybreak', 'daybreak', array($this->config->get('uc_server_loc'), $this->config->get('uc_data_lang')));
 		if(!is_object($this->game->obj['daybreak'])) return "";
 		$guilddata = $this->game->obj['daybreak']->guildinfo($this->config->get('guildtag'), $this->config->get('servername'), false);
 		$achieve = $guilddata['guild_list'][0]['achievement_list'];	
 		$gdata 	  = $guilddata['guild_list'][0];
-		$ktot = count($achieve);
+		$tktot = count($achieve);
 		$spacer = "";
 		if (($this->config('eq2progresstle_date')) == TRUE ) 		
 		{ ($spacer = "Not Killed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"); }
@@ -250,142 +251,272 @@ class eq2progresstle_portal extends portal_generic {
 		//Check which have been killed
 		$tkillslist = $this->pdc->get('portal.module.eq2progresstle.'.$this->root_path);
 				if (!$tkillslist){
-		for ($a=0; $a<=$ktot; $a++) {
-		$kdate = "";
-		if (($this->config('eq2progresstle_date')) == TRUE ) 		
-		{ ($stamp = date('m/d/Y', $achieve[$a]['completedtimestamp']));	 
-	        ($kdate = '<font color="white">'.$stamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike></font>'); }
-		$acid = $achieve[$a]['id'];
-		//Check which were killed
-		if ($acid == '755589334')  {$shattered = $shattered + 1; $sh1 = $kdate.$this->killed($sh1);}
-		if ($acid == '2880419067') {$shattered = $shattered + 1; $sh2 = $kdate.$this->killed($sh2);}
-		if ($acid == '2690907646') {$shattered = $shattered + 1; $sh3 = $kdate.$this->killed($sh3);}
-		if ($acid == '3031774005') {$shattered = $shattered + 1; $sh4 = $kdate.$this->killed($sh4);}
-		if ($acid == '616659975')  {$shattered = $shattered + 1; $sh5 = $kdate.$this->killed($sh5);}
-		if ($acid == '1031899415') {$shattered = $shattered + 1; $sh6 = $kdate.$this->killed($sh6);}
-		if ($acid == '2217589756') {$shattered = $shattered + 1; $sh7 = $kdate.$this->killed($sh7);}
-		if ($acid == '1277336788') {$shattered = $shattered + 1; $sh8 = $kdate.$this->killed($sh8);}
-		if ($acid == '1175319967') {$shattered = $shattered + 1; $sh9 = $kdate.$this->killed($sh9);}
-		if ($acid == '3758088138') {$splitpaw = $splitpaw + 1; $ss1 = $kdate.$this->killed($ss1);}
-		if ($acid == '3522306503') {$splitpaw = $splitpaw + 1; $ss2 = $kdate.$this->killed($ss2);}
-		if ($acid == '4152187954') {$desert = $desert + 1; $df1 = $kdate.$this->killed($df1);}
-		if ($acid == '432099394')  {$desert = $desert + 1; $df2 = $kdate.$this->killed($df2);}
-		if ($acid == '4194994362') {$desert = $desert + 1; $df3 = $kdate.$this->killed($df3);}
-		if ($acid == '1805107181') {$desert = $desert + 1; $df4 = $kdate.$this->killed($df4);}
-		if ($acid == '2296904021') {$desert = $desert + 1; $df5 = $kdate.$this->killed($df5);}
-		if ($acid == '2929705358') {$desert = $desert + 1; $df6 = $kdate.$this->killed($df6);}
-		if ($acid == '1222636566') {$desert = $desert + 1; $df7 = $kdate.$this->killed($df7);}
-		if ($acid == '3002259501') {$desert = $desert + 1; $df8 = $kdate.$this->killed($df8);}
-		if ($acid == '3022331543') {$fallen = $fallen + 1; $fd1 = $kdate.$this->killed($fd1);}
-		if ($acid == '2604469264') {$fallen = $fallen + 1; $fd2 = $kdate.$this->killed($fd2);}
-		if ($acid == '2052346762') {$fallen = $fallen + 1; $fd3 = $kdate.$this->killed($fd3);}
-		if ($acid == '2301347501') {$kingdom = $kingdom + 1; $ks1 = $kdate.$this->killed($ks1);}
-		if ($acid == '2446900980') {$kingdom = $kingdom + 1; $ks2 = $kdate.$this->killed($ks2);}
-		if ($acid == '3442597125') {$kingdom = $kingdom + 1; $ks3 = $kdate.$this->killed($ks3);}
-		if ($acid == '609384496')  {$kingdom = $kingdom + 1; $ks4 = $kdate.$this->killed($ks4);}
-		if ($acid == '1798429543') {$kingdom = $kingdom + 1; $ks5 = $kdate.$this->killed($ks5);}
-		if ($acid == '2075381149') {$kingdom = $kingdom + 1; $ks6 = $kdate.$this->killed($ks6);}
-		if ($acid == '1276137549') {$kingdom = $kingdom + 1; $ks7 = $kdate.$this->killed($ks7);}
-		if ($acid == '2351493763') {$kingdom = $kingdom + 1; $ks8 = $kdate.$this->killed($ks8);}
-		if ($acid == '2660282579') {$faydwer = $faydwer + 1; $ef1 = $kdate.$this->killed($ef1);}
-		if ($acid == '2266042524') {$faydwer = $faydwer + 1; $ef2 = $kdate.$this->killed($ef2);}
-		if ($acid == '573824603')  {$faydwer = $faydwer + 1; $ef3 = $kdate.$this->killed($ef3);}
-		if ($acid == '2253756365') {$faydwer = $faydwer + 1; $ef4 = $kdate.$this->killed($ef4);}
-		if ($acid == '3922377540') {$faydwer = $faydwer + 1; $ef5 = $kdate.$this->killed($ef5);}
-		if ($acid == '3291105741') {$kunark = $kunark + 1; $rok1 = $kdate.$this->killed($rok1);}
-		if ($acid == '3927712073') {$kunark = $kunark + 1; $rok2 = $kdate.$this->killed($rok2);}
-		if ($acid == '2653397487') {$kunark = $kunark + 1; $rok3 = $kdate.$this->killed($rok3);}
-		if ($acid == '4056887203') {$kunark = $kunark + 1; $rok4 = $kdate.$this->killed($rok4);}
-		if ($acid == '3100040417') {$kunark = $kunark + 1; $rok5 = $kdate.$this->killed($rok5);}
-		if ($acid == '3448097163') {$kunark = $kunark + 1; $rok6 = $kdate.$this->killed($rok6);}
-		if ($acid == '1837045447') {$kunark = $kunark + 1; $rok7 = $kdate.$this->killed($rok7);}
-		if ($acid == '3830384644') {$kunark = $kunark + 1; $rok8 = $kdate.$this->killed($rok8);}
-		if ($acid == '826149840')  {$kunark = $kunark + 1; $rok9 = $kdate.$this->killed($rok9);}
-		if ($acid == '3155887355') {$odyssey = $odyssey + 1; $tso1 = $kdate.$this->killed($tso1);}
-		if ($acid == '1526448946') {$odyssey = $odyssey + 1; $tso2 = $kdate.$this->killed($tso2);}
-		if ($acid == '3682994519') {$odyssey = $odyssey + 1; $tso3 = $kdate.$this->killed($tso3);}
-		if ($acid == '1005439184') {$odyssey = $odyssey + 1; $tso4 = $kdate.$this->killed($tso4);}
-		if ($acid == '3650735286') {$odyssey = $odyssey + 1; $tso5 = $kdate.$this->killed($tso5);}
-		if ($acid == '1233836872') {$odyssey = $odyssey + 1; $tso6 = $kdate.$this->killed($tso6);}
-		if ($acid == '3838099024') {$sentinel = $sentinel + 1; $sf1 = $kdate.$this->killed($sf1);}
-		if ($acid == '2921756931') {$sentinel = $sentinel + 1; $sf2 = $kdate.$this->killed($sf2);}
-		if ($acid == '1362341525') {$sentinel = $sentinel + 1; $sf3 = $kdate.$this->killed($sf3);}
-		if ($acid == '1808623966') {$sentinel = $sentinel + 1; $sf4 = $kdate.$this->killed($sf4);}
-		if ($acid == '3217251809') {$sentinel = $sentinel + 1; $sf5 = $kdate.$this->killed($sf5);}
-		if ($acid == '235060975')  {$sentinel = $sentinel + 1; $sf6 = $kdate.$this->killed($sf6);}
-		if ($acid == '130131495')  {$sentinel = $sentinel + 1; $sf7 = $kdate.$this->killed($sf7);}
-		if ($acid == '351383115')  {$velious = $velious + 1; $dov1 = $kdate.$this->killed($dov1);}
-		if ($acid == '2473806106') {$velious = $velious + 1; $dov2 = $kdate.$this->killed($dov2);}
-		if ($acid == '3615452988') {$velious = $velious + 1; $dov3 = $kdate.$this->killed($dov3);}
-		if ($acid == '3010722630') {$velious = $velious + 1; $dov4 = $kdate.$this->killed($dov4);}
-		if ($acid == '4054449882') {$velious = $velious + 1; $dov5 = $kdate.$this->killed($dov5);}
-		if ($acid == '1628177139') {$velious = $velious + 1; $dov6 = $kdate.$this->killed($dov6);}
-		if ($acid == '3606842680') {$velious = $velious + 1; $dov7 = $kdate.$this->killed($dov7);}
-		if ($acid == '536961056')  {$velious = $velious + 1; $dov8 = $kdate.$this->killed($dov8);}
-		if ($acid == '1765210956') {$velious = $velious + 1; $dov9 = $kdate.$this->killed($dov9);}
-		if ($acid == '835180705')  {$velious = $velious + 1; $dov10 = $kdate.$this->killed($dov10);}
-		if ($acid == '2362010195') {$velious = $velious + 1; $dov11 = $kdate.$this->killed($dov11);}
-		if ($acid == '344369629')  {$velious = $velious + 1; $dov12 = $kdate.$this->killed($dov12);}
-		if ($acid == '2166076255') {$velious = $velious + 1; $dov13 = $kdate.$this->killed($dov13);}
-		if ($acid == '2544523763') {$velious = $velious + 1; $dov14 = $kdate.$this->killed($dov14);}
-		if ($acid == '832312297')  {$velious = $velious + 1; $dov15 = $kdate.$this->killed($dov15);}
-		if ($acid == '3285130354') {$velious = $velious + 1; $dov16 = $kdate.$this->killed($dov16);}
-		if ($acid == '3582177156') {$velious = $velious + 1; $dov17 = $kdate.$this->killed($dov17);}
-		if ($acid == '3493794934') {$velious = $velious + 1; $dov18 = $kdate.$this->killed($dov18);}
-		if ($acid == '2097487381') {$velious = $velious + 1; $dov19 = $kdate.$this->killed($dov19);}
-		if ($acid == '3570058315') {$velious = $velious + 1; $dov20 = $kdate.$this->killed($dov20);}
-		if ($acid == '4145063722') {$velious = $velious + 1; $dov21 = $kdate.$this->killed($dov21);}
-		if ($acid == '528786370')  {$velious = $velious + 1; $dov22 = $kdate.$this->killed($dov22);}
-		if ($acid == '1622583242') {$chains = $chains + 1; $coe1 = $kdate.$this->killed($coe1);}
-		if ($acid == '2815791137') {$chains = $chains + 1; $coe2 = $kdate.$this->killed($coe2);}
-		if ($acid == '117381414')  {$chains = $chains + 1; $coe3 = $kdate.$this->killed($coe3);}
-		if ($acid == '3473349988') {$chains = $chains + 1; $coe4 = $kdate.$this->killed($coe4);}
-		if ($acid == '2968476469') {$arena = $arena + 1; $arena1 = $kdate.$this->killed($arena1);}
-		if ($acid == '1979157433') {$arena = $arena + 1; $arena2 = $kdate.$this->killed($arena2);}
-		if ($acid == '593827632')  {$arena = $arena + 1; $arena3 = $kdate.$this->killed($arena3);}
-		if ($acid == '476803566')  {$arena = $arena + 1; $arena4 = $kdate.$this->killed($arena4);}
-		if ($acid == '136089721')  {$arena = $arena + 1; $arena5 = $kdate.$this->killed($arena5);}
-		if ($acid == '1266762124') {$arena = $arena + 1; $arena6 = $kdate.$this->killed($arena6);}
-		if ($acid == '3234597117') {$arena = $arena + 1; $arena7 = $kdate.$this->killed($arena7);}
-		if ($acid == '3543924985') {$arena = $arena + 1; $arena8 = $kdate.$this->killed($arena8);}
-		if ($acid == '1253692288') {$arena = $arena + 1; $arena9 = $kdate.$this->killed($arena9);}
-		if ($acid == '3620327620') {$arena = $arena + 1; $arena10 = $kdate.$this->killed($arena10);}
-		if ($acid == '2417016352') {$contested = $contested + 1; $cont1 = $kdate.$this->killed($cont1);}
-		if ($acid == '42226058')   {$contested = $contested + 1; $cont2 = $kdate.$this->killed($cont2);}
-		if ($acid == '4186719351') {$contested = $contested + 1; $cont3 = $kdate.$this->killed($cont3);}
-		if ($acid == '2623216647') {$contested = $contested + 1; $cont4 = $kdate.$this->killed($cont4);}
-		if ($acid == '1748417285') {$contested = $contested + 1; $cont5 = $kdate.$this->killed($cont5);}
-		if ($acid == '3816551028') {$contested = $contested + 1; $cont6 = $kdate.$this->killed($cont6);}
-		if ($acid == '4035705456') {$contested = $contested + 1; $cont7 = $kdate.$this->killed($cont7);}
-		if ($acid == '2942232089') {$contested = $contested + 1; $cont8 = $kdate.$this->killed($cont8);}
-		if ($acid == '4101909069') {$contested = $contested + 1; $cont9 = $kdate.$this->killed($cont9);}
-		if ($acid == '2371639852') {$veeshan = $veeshan + 1; $tov1 = $kdate.$this->killed($tov1);}
-		if ($acid == '2828051041') {$veeshan = $veeshan + 1; $tov2 = $kdate.$this->killed($tov2);}
-		if ($acid == '3607119179') {$veeshan = $veeshan + 1; $tov3 = $kdate.$this->killed($tov3);}
-		if ($acid == '3194637595') {$veeshan = $veeshan + 1; $tov4 = $kdate.$this->killed($tov4);}
-		if ($acid == '554855277')  {$veeshan = $veeshan + 1; $tov5 = $kdate.$this->killed($tov5);}
-		if ($acid == '1344069514') {$veeshan = $veeshan + 1; $tov6 = $kdate.$this->killed($tov6);}
-		if ($acid == '1089000969') {$veeshan = $veeshan + 1; $tov7 = $kdate.$this->killed($tov7);}
-		if ($acid == '1400749304') {$veeshan = $veeshan + 1; $tov8 = $kdate.$this->killed($tov8);}
-		if ($acid == '3296875551') {$veeshan = $veeshan + 1; $tov9 = $kdate.$this->killed($tov9);}
-		if ($acid == '1302823374') {$veeshan = $veeshan + 1; $tov10 = $kdate.$this->killed($tov10);}
-		if ($acid == '616943266')  {$veeshan = $veeshan + 1; $tov11 = $kdate.$this->killed($tov11);}
-		if ($acid == '3928176072') {$altar = $altar + 1; $aom1 = $kdate.$this->killed($aom1);}
-		if ($acid == '3296712239') {$altar = $altar + 1; $aom2 = $kdate.$this->killed($aom2);}
-		if ($acid == '1748957509') {$altar = $altar + 1; $aom3 = $kdate.$this->killed($aom3);}
-		if ($acid == '116845928')  {$altar = $altar + 1; $aom4 = $kdate.$this->killed($aom4);}
-		if ($acid == '1849147944') {$altar = $altar + 1; $aom5 = $kdate.$this->killed($aom5);}
-		if ($acid == '1475875915') {$altar = $altar + 1; $aom6 = $kdate.$this->killed($aom6);}
-		if ($acid == '19578004')   {$altar = $altar + 1; $aom7 = $kdate.$this->killed($aom7);}
-		if ($acid == '99686993')   {$altar = $altar + 1; $aom8 = $kdate.$this->killed($aom8);}
-		if ($acid == '2955610207') {$altar = $altar + 1; $aom9 = $kdate.$this->killed($aom9);}
-		if ($acid == '1434280382' or $acid == '2017956309'){$altar = $altar + 1; $aom10 = $kdate.$this->killed($aom10);}
-		if ($acid == '3742464779') {$altar = $altar + 1; $aom11 = $kdate.$this->killed($aom11);}
-		if ($acid == '3785130348') {$precipice = $precipice + 1; $pop1 = $kdate.$this->killed($pop1);}
-		if ($acid == '3312622728') {$precipice = $precipice + 1; $pop2 = $kdate.$this->killed($pop2);}
-		if ($acid == '1264497483') {$precipice = $precipice + 1; $pop3 = $kdate.$this->killed($pop3);}
-		if ($acid == '2302657105') {$precipice = $precipice + 1; $pop4 = $kdate.$this->killed($pop4);}
-		if ($acid == '3211824092') {$precipice = $precipice + 1; $pop5 = $kdate.$this->killed($pop5);}
+		for ($ta=0; $ta<=$tktot; $ta++) {
+		$tkdate = "";
+		//d($tkdate);
+		if (($this->config('eq2progresstle_date')) == TRUE ) { 
+		($tstamp = date('m/d/Y', $achieve[$ta]['completedtimestamp']));	 
+	    ($tkdate = '<font color="white">'.$tstamp.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike></font>');
+		}
+		$tacid = $achieve[$ta]['id'];
+		if ($tacid == '755589334')  {$shattered = $shattered + 1; 
+		$sh1 = $tkdate.'<font color="808080"><strike>Archlich Udalan</strike></font><br>';}
+		if ($tacid == '2880419067') {$shattered = $shattered + 1; 
+		$sh2 = $tkdate.'<font color="808080"><strike>Darathar</strike></font><br>';}
+		if ($tacid == '2690907646') {$shattered = $shattered + 1; 
+		$sh3 = $tkdate.'<font color="808080"><strike>K\'Dal the Deceiver</strike></font><br>';}
+		if ($tacid == '3031774005') {$shattered = $shattered + 1; 
+		$sh4 = $tkdate.'<font color="808080"><strike>King Drayek</strike></font><br>';}
+		if ($tacid == '616659975')  {$shattered = $shattered + 1; 
+		$sh5 = $tkdate.'<font color="808080"><strike>King Zalak</strike></font><br>';}
+		if ($tacid == '1031899415') {$shattered = $shattered + 1; 
+		$sh6 = $tkdate.'<font color="808080"><strike>Overlord Oxulius</strike></font><br>';}
+		if ($tacid == '2217589756') {$shattered = $shattered + 1; 
+		$sh7 = $tkdate.'<font color="808080"><strike>Rognog the Angler</strike></font><br>';}
+		if ($tacid == '1277336788') {$shattered = $shattered + 1; 
+		$sh8 = $tkdate.'<font color="808080"><strike>Venekor</strike></font><br>';}
+		if ($tacid == '1175319967') {$shattered = $shattered + 1; 
+		$sh9 = $tkdate.'<font color="808080"><strike>Vox</strike></font><br>';}
+		if ($tacid == '3758088138') {$splitpaw = $splitpaw + 1; 
+		$ss1 = $tkdate.'<font color="808080"><strike>Faroth Mal</strike></font><br>';}
+		if ($tacid == '3522306503') {$splitpaw = $splitpaw + 1; 
+		$ss2 = $tkdate.'<font color="808080"><strike>Skoam Anvilpaw</strike></font><br>';}
+		if ($tacid == '4152187954') {$desert = $desert + 1; 
+		$df1 = $tkdate.'<font color="808080"><strike>Ahk\'Min Rhoen</strike></font><br>';}
+		if ($tacid == '432099394')  {$desert = $desert + 1; 
+		$df2 = $tkdate.'<font color="808080"><strike>Arazul, Hand of the Godking</strike></font><br>';}
+		if ($tacid == '4194994362') {$desert = $desert + 1; 
+		$df3 = $tkdate.'<font color="808080"><strike>Barakah & Siyamak</strike></font><br>';}
+		if ($tacid == '1805107181') {$desert = $desert + 1; 
+		$df4 = $tkdate.'<font color="808080"><strike>Djinn Master</strike></font><br>';}
+		if ($tacid == '2296904021') {$desert = $desert + 1; 
+		$df5 = $tkdate.'<font color="808080"><strike>Godking Anuk</strike></font><br>';}
+		if ($tacid == '2929705358') {$desert = $desert + 1; 
+		$df6 = $tkdate.'<font color="808080"><strike>Lathena</strike></font><br>';}
+		if ($tacid == '1222636566') {$desert = $desert + 1; 
+		$df7 = $tkdate.'<font color="808080"><strike>Lockjaw</strike></font><br>';}
+		if ($tacid == '3002259501') {$desert = $desert + 1; 
+		$df8 = $tkdate.'<font color="808080"><strike>The Black Queen</strike></font><br>';}
+		if ($tacid == '3022331543') {$fallen = $fallen + 1; 
+		$fd1 = $tkdate.'<font color="808080"><strike>Chel\'Drak</strike></font><br>';}
+		if ($tacid == '2604469264') {$fallen = $fallen + 1; 
+		$fd2 = $tkdate.'<font color="808080"><strike>Xux\'laio</strike></font><br>';}
+		if ($tacid == '2052346762') {$fallen = $fallen + 1; 
+		$fd3 = $tkdate.'<font color="808080"><strike>Bonesnapper</strike></font><br>';}
+		if ($tacid == '2301347501') {$kingdom = $kingdom + 1; 
+		$ks1 = $tkdate.'<font color="808080"><strike>Harla Dar</strike></font><br>';}
+		if ($tacid == '2446900980') {$kingdom = $kingdom + 1; 
+		$ks2 = $tkdate.'<font color="808080"><strike>Pantrilla</strike></font><br>';}
+		if ($tacid == '3442597125') {$kingdom = $kingdom + 1; 
+		$ks3 = $tkdate.'<font color="808080"><strike>Sharti & Ireth</strike></font><br>';}
+		if ($tacid == '609384496')  {$kingdom = $kingdom + 1; 
+		$ks4 = $tkdate.'<font color="808080"><strike>Talendor & Gorenaire</strike></font><br>';}
+		if ($tacid == '1798429543') {$kingdom = $kingdom + 1; 
+		$ks5 = $tkdate.'<font color="808080"><strike>Tarinax</strike></font><br>';}
+		if ($tacid == '2075381149') {$kingdom = $kingdom + 1; 
+		$ks6 = $tkdate.'<font color="808080"><strike>Venekor</strike></font><br>';}
+		if ($tacid == '1276137549') {$kingdom = $kingdom + 1; 
+		$ks7 = $tkdate.'<font color="808080"><strike>Vilucidae</strike></font><br>';}
+		if ($tacid == '2351493763') {$kingdom = $kingdom + 1; 
+		$ks8 = $tkdate.'<font color="808080"><strike>Vyemm</strike></font><br>';}
+		if ($tacid == '2660282579') {$faydwer = $faydwer + 1; 
+		$ef1 = $tkdate.'<font color="808080"><strike>Clockwork Menace</strike></font><br>';}
+		if ($tacid == '2266042524') {$faydwer = $faydwer + 1; 
+		$ef2 = $tkdate.'<font color="808080"><strike>Malkonis D\'Morte</strike></font><br>';}
+		if ($tacid == '573824603')  {$faydwer = $faydwer + 1; 
+		$ef3 = $tkdate.'<font color="808080"><strike>Maong Mistmoore (Sanctum)</strike></font><br>';}
+		if ($tacid == '2253756365') {$faydwer = $faydwer + 1; 
+		$ef4 = $tkdate.'<font color="808080"><strike>Mayong Mistmoore (Throne)</strike></font><br>';}
+		if ($tacid == '3922377540') {$faydwer = $faydwer + 1; 
+		$ef5 = $tkdate.'<font color="808080"><strike>Wuoshi</strike></font><br>';}
+		if ($tacid == '3291105741') {$kunark = $kunark + 1; 
+		$rok1 = $tkdate.'<font color="808080"><strike>Byzola</strike></font><br>';}
+		if ($tacid == '3927712073') {$kunark = $kunark + 1; 
+		$rok2 = $tkdate.'<font color="808080"><strike>Imzok\'s Revenge</strike></font><br>';}
+		if ($tacid == '2653397487') {$kunark = $kunark + 1; 
+		$rok3 = $tkdate.'<font color="808080"><strike>Leviathan</strike></font><br>';}
+		if ($tacid == '4056887203') {$kunark = $kunark + 1; 
+		$rok4 = $tkdate.'<font color="808080"><strike>Pawbuster</strike></font><br>';}
+		if ($tacid == '3100040417') {$kunark = $kunark + 1; 
+		$rok5 = $tkdate.'<font color="808080"><strike>Phara Dar</strike></font><br>';}
+		if ($tacid == '3448097163') {$kunark = $kunark + 1; 
+		$rok6 = $tkdate.'<font color="808080"><strike>Selrach Di\'Zok</strike></font><br>';}
+		if ($tacid == '1837045447') {$kunark = $kunark + 1; 
+		$rok7 = $tkdate.'<font color="808080"><strike>Tariza</strike></font><br>';}
+		if ($tacid == '3830384644') {$kunark = $kunark + 1; 
+		$rok8 = $tkdate.'<font color="808080"><strike>Trakanon</strike></font><br>';}
+		if ($tacid == '826149840')  {$kunark = $kunark + 1; 
+		$rok9 = $tkdate.'<font color="808080"><strike>Venril Sathir</strike></font><br>';}
+		if ($tacid == '3155887355') {$odyssey = $odyssey + 1; 
+		$tso1 = $tkdate.'<font color="808080"><strike>Anashti Sul</strike></font><br>';}
+		if ($tacid == '1526448946') {$odyssey = $odyssey + 1; 
+		$tso2 = $tkdate.'<font color="808080"><strike>Gynok Moltor</strike></font><br>';}
+		if ($tacid == '3682994519') {$odyssey = $odyssey + 1; 
+		$tso3 = $tkdate.'<font color="808080"><strike>Miragul</strike></font><br>';}
+		if ($tacid == '1005439184') {$odyssey = $odyssey + 1; 
+		$tso4 = $tkdate.'<font color="808080"><strike>Munzok</strike></font><br>';}
+		if ($tacid == '3650735286') {$odyssey = $odyssey + 1; 
+		$tso5 = $tkdate.'<font color="808080"><strike>Warlord Ykesha</strike></font><br>';}
+		if ($tacid == '1233836872') {$odyssey = $odyssey + 1; 
+		$tso6 = $tkdate.'<font color="808080"><strike>Zarrakon</strike></font><br>';}
+		if ($tacid == '3838099024') {$sentinel = $sentinel + 1; 
+		$sf1 = $tkdate.'<font color="808080"><strike>Master Yael</strike></font><br>';}
+		if ($tacid == '2921756931') {$sentinel = $sentinel + 1; 
+		$sf2 = $tkdate.'<font color="808080"><strike>Perah\'Celsis</strike></font><br>';}
+		if ($tacid == '1362341525') {$sentinel = $sentinel + 1; 
+		$sf3 = $tkdate.'<font color="808080"><strike>Roehn Theer</strike></font><br>';}
+		if ($tacid == '1808623966') {$sentinel = $sentinel + 1; 
+		$sf4 = $tkdate.'<font color="808080"><strike>Roehn Theer (HM)</strike></font><br>';}
+		if ($tacid == '3217251809') {$sentinel = $sentinel + 1; 
+		$sf5 = $tkdate.'<font color="808080"><strike>Toxxulia</strike></font><br>';}
+		if ($tacid == '235060975')  {$sentinel = $sentinel + 1; 
+		$sf6 = $tkdate.'<font color="808080"><strike>Vuulan</strike></font><br>';}
+		if ($tacid == '130131495')  {$sentinel = $sentinel + 1; 
+		$sf7 = $tkdate.'<font color="808080"><strike>Waansu</strike></font><br>';}
+		if ($tacid == '351383115')  {$velious = $velious + 1; 
+		$dov1 = $tkdate.'<font color="808080"><strike>Dozekar</strike></font><br>';}
+		if ($tacid == '2473806106') {$velious = $velious + 1; 
+		$dov2 = $tkdate.'<font color="808080"><strike>Dozekar (Challenge)</strike></font><br>';}
+		if ($tacid == '3615452988') {$velious = $velious + 1; 
+		$dov3 = $tkdate.'<font color="808080"><strike>General Teku</strike></font><br>';}
+		if ($tacid == '3010722630') {$velious = $velious + 1; 
+		$dov4 = $tkdate.'<font color="808080"><strike>Honvar the Earthcrasher</strike></font><br>';}
+		if ($tacid == '4054449882') {$velious = $velious + 1; 
+		$dov5 = $tkdate.'<font color="808080"><strike>Kildrukaun the Ancient</strike></font><br>';}
+		if ($tacid == '1628177139') {$velious = $velious + 1; 
+		$dov6 = $tkdate.'<font color="808080"><strike>King Tormax</strike></font><br>';}
+		if ($tacid == '3606842680') {$velious = $velious + 1; 
+		$dov7 = $tkdate.'<font color="808080"><strike>King Tormax (Challenge)</strike></font><br>';}
+		if ($tacid == '536961056')  {$velious = $velious + 1; 
+		$dov8 = $tkdate.'<font color="808080"><strike>Kraytok</strike></font><br>';}
+		if ($tacid == '1765210956') {$velious = $velious + 1; 
+		$dov9 = $tkdate.'<font color="808080"><strike>Kraytok (Challenge)</strike></font><br>';}
+		if ($tacid == '835180705')  {$velious = $velious + 1; 
+		$dov10 = $tkdate.'<font color="808080"><strike>Psyllon\'Ris\'</strike></font><br>';}
+		if ($tacid == '2362010195') {$velious = $velious + 1; 
+		$dov11 = $tkdate.'<font color="808080"><strike>Sevalak of Storms</strike></font><br>';}
+		if ($tacid == '344369629')  {$velious = $velious + 1; 
+		$dov12 = $tkdate.'<font color="808080"><strike>Soren the Vindicator</strike></font><br>';}
+		if ($tacid == '2166076255') {$velious = $velious + 1; 
+		$dov13 = $tkdate.'<font color="808080"><strike>Statue of Rallos Zek</strike></font><br>';}
+		if ($tacid == '2544523763') {$velious = $velious + 1; 
+		$dov14 = $tkdate.'<font color="808080"><strike>Statue of Rallos Zek (Challenge)</strike></font><br>';}
+		if ($tacid == '832312297')  {$velious = $velious + 1; 
+		$dov15 = $tkdate.'<font color="808080"><strike>Sullon Zek</strike></font><br>';}
+		if ($tacid == '3285130354') {$velious = $velious + 1; 
+		$dov16 = $tkdate.'<font color="808080"><strike>Sullon Zek (Challenge)</strike></font><br>';}
+		if ($tacid == '3582177156') {$velious = $velious + 1; 
+		$dov17 = $tkdate.'<font color="808080"><strike></strike>Tallon Zek</font><br>';}
+		if ($tacid == '3493794934') {$velious = $velious + 1; 
+		$dov18 = $tkdate.'<font color="808080"><strike></strike>Tallon Zek (Challenge)</font><br>';}
+		if ($tacid == '2097487381') {$velious = $velious + 1; 
+		$dov19 = $tkdate.'<font color="808080"><strike>Vallon Zek</strike></font><br>';}
+		if ($tacid == '3570058315') {$velious = $velious + 1; 
+		$dov20 = $tkdate.'<font color="808080"><strike>>Vallon Zek (Challenge)</strike></font><br>';}
+		if ($tacid == '4145063722') {$velious = $velious + 1; 
+		$dov21 = $tkdate.'<font color="808080"><strike>Vrewwx Icyheart</strike></font><br>';}
+		if ($tacid == '528786370')  {$velious = $velious + 1; 
+		$dov22 = '<font color="808080"><strike>Vyskudra the Ancient</strike></font><br>';}
+		if ($tacid == '1622583242') {$chains = $chains + 1; 
+		$coe1 = $tkdate.'<font color="808080"><strike>Amalgamon</strike></font><br>';}
+		if ($tacid == '2815791137') {$chains = $chains + 1; 
+		$coe2 = $tkdate.'<font color="808080"><strike>Baroddas & Baelon</strike></font><br>';}
+		if ($tacid == '117381414')  {$chains = $chains + 1; 
+		$coe3 = $tkdate.'<font color="808080"><strike>Drinal 4 Soulwells</strike></font><br>';}
+		if ($tacid == '3473349988') {$chains = $chains + 1; 
+		$coe4 = $tkdate.'<font color="808080"><strike>Omugra, Thazarus, & Vuzalg</strike></font><br>';}
+		if ($tacid == '2968476469') {$arena = $arena + 1; 
+		$arena1 = $tkdate.'<font color="808080"><strike>Bristlebane</strike></font><br>';}
+		if ($tacid == '1979157433') {$arena = $arena + 1; 
+		$arena2 = $tkdate.'<font color="808080"><strike>Drinal</strike></font><br>';}
+		if ($tacid == '593827632')  {$arena = $arena + 1; 
+		$arena3 = $tkdate.'<font color="808080"><strike>Mithaniel Marr</strike></font><br>';}
+		if ($tacid == '476803566')  {$arena = $arena + 1; 
+		$arena4 = $tkdate.'<font color="808080"><strike>Prexus</strike></font><br>';}
+		if ($tacid == '136089721')  {$arena = $arena + 1; 
+		$arena5 = $tkdate.'<font color="808080"><strike>Rodcet Nife</strike></font><br>';}
+		if ($tacid == '1266762124') {$arena = $arena + 1; 
+		$arena6 = $tkdate.'<font color="808080"><strike>Solusek Ro</strike></font><br>';}
+		if ($tacid == '3234597117') {$arena = $arena + 1; 
+		$arena7 = $tkdate.'<font color="808080"><strike>Sullon Zek</strike></font><br>';}
+		if ($tacid == '3543924985') {$arena = $arena + 1; 
+		$arena8 = $tkdate.'<font color="808080"><strike>Tallon Zek</strike></font><br>';}
+		if ($tacid == '1253692288') {$arena = $arena + 1; 
+		$arena9 = $tkdate.'<font color="808080"><strike>Tunare</strike></font><br>';}
+		if ($tacid == '3620327620') {$arena = $arena + 1; 
+		$arena10 = $tkdate.'<font color="808080"><strike>Vallon Zek</strike></font><br>';}
+		if ($tacid == '2417016352') {$contested = $contested + 1; 
+		$cont1 = $tkdate.'<font color="808080"><strike>Drinal</strike></font><br>';}
+		if ($tacid == '42226058')   {$contested = $contested + 1; 
+		$cont2 = $tkdate.'<font color="808080"><strike>Mithaniel Marr</strike></font><br>';}
+		if ($tacid == '4186719351') {$contested = $contested + 1; 
+		$cont3 = $tkdate.'<font color="808080"><strike>Prexus</strike></font><br>';}
+		if ($tacid == '2623216647') {$contested = $contested + 1; 
+		$cont4 = $tkdate.'<font color="808080"><strike>Rodcet Nife</strike></font><br>';}
+		if ($tacid == '1748417285') {$contested = $contested + 1; 
+		$cont5 = $tkdate.'<font color="808080"><strike>Solusek Ro</strike></font><br>';}
+		if ($tacid == '3816551028') {$contested = $contested + 1; 
+		$cont6 = $tkdate.'<font color="808080"><strike>Sullon Zek</strike></font><br>';}
+		if ($tacid == '4035705456') {$contested = $contested + 1; 
+		$cont7 = $tkdate.'<font color="808080"><strike>Tallon Zek</strike></font><br>';}
+		if ($tacid == '2942232089') {$contested = $contested + 1; 
+		$cont8 = $tkdate.'<font color="808080"><strike>Tunare</strike></font><br>';}
+		if ($tacid == '4101909069') {$contested = $contested + 1; 
+		$cont9 = $tkdate.'<font color="808080"><strike>Vallon Zek</strike></font><br>';}
+		if ($tacid == '2371639852') {$veeshan = $veeshan + 1; 
+		$tov1 = '<font color="808080"><strike>Bristlebane</strike></font><br>';}
+		if ($tacid == '2828051041') {$veeshan = $veeshan + 1; 
+		$tov2 = '<font color="808080"><strike>Draazak the Ancient</strike></font><br>';}
+		if ($tacid == '3607119179') {$veeshan = $veeshan + 1; 
+		$tov3 = '<font color="808080"><strike>Exarch Lorokai the Unliving</strike></font><br>';}
+		if ($tacid == '3194637595') {$veeshan = $veeshan + 1; 
+		$tov4 = '<font color="808080"><strike>Fabled Mutagenic Outcast</strike></font><br>';}
+		if ($tacid == '554855277')  {$veeshan = $veeshan + 1; 
+		$tov5 = '<font color="808080"><strike>Fabled Three Princes</strike></font><br>';}
+		if ($tacid == '1344069514') {$veeshan = $veeshan + 1; 
+		$tov6 = '<font color="808080"><strike>Fabled Vyemm & Alzid Prime</strike></font><br>';}
+		if ($tacid == '1089000969') {$veeshan = $veeshan + 1; 
+		$tov7 = '<font color="808080"><strike>Roehn Theer - Ages End</strike></font><br>';}
+		if ($tacid == '1400749304') {$veeshan = $veeshan + 1; 
+		$tov8 = '<font color="808080"><strike>Roehn Theer - Ages End (HM)</strike></font><br>';}
+		if ($tacid == '3296875551') {$veeshan = $veeshan + 1; 
+		$tov9 = '<font color="808080"><strike>The Crumbling Emperor</strike></font><br>';}
+		if ($tacid == '1302823374') {$veeshan = $veeshan + 1; 
+		$tov10 = '<font color="808080"><strike>Vulak\'Aerr the Dreadscale</strike></font><br>';}
+		if ($tacid == '616943266')  {$veeshan = $veeshan + 1; 
+		$tov11 = '<font color="808080"><strike>Zlandicar</strike></font><br>';}
+		if ($tacid == '3928176072') {$altar = $altar + 1; 
+		$aom1 = '<font color="808080"><strike>Arch Lich Rhag\'Zadune</strike></font><br>';}
+		if ($tacid == '3296712239') {$altar = $altar + 1; 
+		$aom2 = '<font color="808080"><strike>Baz the Illusionist</strike></font><br>';}
+		if ($tacid == '1748957509') {$altar = $altar + 1; 
+		$aom3 = '<font color="808080"><strike>Captain Krasnok</strike></font><br>';}
+		if ($tacid == '116845928')  {$altar = $altar + 1; 
+		$aom4 = '<font color="808080"><strike>Construct of Malice</strike></font><br>';}
+		if ($tacid == '1849147944') {$altar = $altar + 1; 
+		$aom5 = '<font color="808080"><strike>Grethah the Frenzied</strike></font><br>';}
+		if ($tacid == '1475875915') {$altar = $altar + 1; 
+		$aom6 = '<font color="808080"><strike>Kildiun the Drunkard</strike></font><br>';}
+		if ($tacid == '19578004')   {$altar = $altar + 1; 
+		$aom7 = '<font color="808080"><strike>Malkonis D\'Morte</strike></font><br>';}
+		if ($tacid == '99686993')   {$altar = $altar + 1; 
+		$aom8 = '<font color="808080"><strike>Malkonis D\'Morte (Challenge)</strike></font><br>';}
+		if ($tacid == '2955610207') {$altar = $altar + 1; 
+		$aom9 = '<font color="808080"><strike>Perador the Mighty</strike></font><br>';}
+		if ($tacid == '1434280382' or $tacid == '2017956309'){$altar = $altar + 1; 
+		$aom10 = '<font color="808080"><strike>Primordial Ritualist Villandre V\'Zher</strike></font><br>';}
+		if ($tacid == '3742464779') {$altar = $altar + 1; 
+		$aom11 = '<font color="808080"><strike>The Crumbling Icon</strike></font><br>';}
+		if ($tacid == '3785130348') {$precipice = $precipice + 1; 
+		$pop1 = '<font color="808080"><strike>Brell Serilis</strike></font><br>';}
+		if ($tacid == '3312622728') {$precipice = $precipice + 1; 
+		$pop2 = '<font color="808080"><strike>Cazic-Thule</strike></font><br>';}
+		if ($tacid == '1264497483') {$precipice = $precipice + 1; 
+		$pop3 = '<font color="808080"><strike>Fennin Ro</strike></font><br>';}
+		if ($tacid == '2302657105') {$precipice = $precipice + 1; 
+		$pop4 = '<font color="808080"><strike>Karana</strike></font><br>';}
+		if ($tacid == '3211824092') {$precipice = $precipice + 1; 
+		$pop5 = '<font color="808080"><strike>The Tribunal</strike></font><br>';}
 		}
 		//cache it
 		$tkillslist = array($sh1,$sh2,$sh3,$sh4,$sh5,$sh6,$sh7,$sh8,$sh9,$shattered,
@@ -419,7 +550,7 @@ class eq2progresstle_portal extends portal_generic {
 		$zonetotal5 = ($tkillslist[34]);
 		$echoes = ($tkillslist[35].$tkillslist[36].$tkillslist[37].$tkillslist[38].$tkillslist[39]);
 		$zonetotal6 = ($tkillslist[40]);
-		$ruins = ($tkillslist[44].$tkillslist[42].$tkillslist[43].$tkillslist[44].$tkillslist[45].$tkillslist[46].$tkillslist[47].
+		$ruins = ($tkillslist[41].$tkillslist[42].$tkillslist[43].$tkillslist[44].$tkillslist[45].$tkillslist[46].$tkillslist[47].
 		$tkillslist[48].$tkillslist[49]);
 		$zonetotal7 = ($tkillslist[50]);
 		$shad = ($tkillslist[51].$tkillslist[52].$tkillslist[53].$tkillslist[54].$tkillslist[55].$tkillslist[56]);
@@ -441,7 +572,7 @@ class eq2progresstle_portal extends portal_generic {
 		$zonetotal15 = ($tkillslist[138]);
 		$power = ($tkillslist[139].$tkillslist[140].$tkillslist[141].$tkillslist[142].$tkillslist[143]);
 		$zonetotal16 = ($tkillslist[144]);
-                $zonename1 = $shval; 	      $zonemax1 = $shmax;          $zonetip1 = $vanilla;
+        $zonename1 = $shval; 	      $zonemax1 = $shmax;          $zonetip1 = $vanilla;
 		$zonename2 = $ssval; 	      $zonemax2 = $ssmax;          $zonetip2 = $sunder;
 		$zonename3 = $dfval;  	      $zonemax3 = $dfmax;          $zonetip3 = $flame;
 		$zonename4 = $fdval; 	      $zonemax4 = $fdmax;          $zonetip4 = $fall;
@@ -455,7 +586,7 @@ class eq2progresstle_portal extends portal_generic {
 		$zonename12 = $arenaval;      $zonemax12 = $arenamax;      $zonetip12 = $aren;
 		$zonename13 = $contval;       $zonemax13 = $contmax; 	   $zonetip13 = $con;
 		$zonename14 = $tovval; 	      $zonemax14 = $tovmax; 	   $zonetip14 = $tear;
-		$zonename15 = $aomval; 	      $zonemax15 = $aommax;	   $zonetip15 = $alt;
+		$zonename15 = $aomval; 	      $zonemax15 = $aommax;	       $zonetip15 = $alt;
 		$zonename16 = $popval; 	      $zonemax16 = $popmax;    	   $zonetip16 = $power;
 		$out = '';
 			for($i=1;$i<=16;$i++) {
@@ -468,14 +599,6 @@ class eq2progresstle_portal extends portal_generic {
 			return $out;
 		return $this->bar_out();
 	}
-	
-	public function killed($kill) {
-		$killed = preg_replace("/&#?[a-z0-9]{2,8};/i","",$kill);
-		$killed2 = strip_tags($killed);
-		$killed3 = substr($killed2,10);
-		$killed4 = '<font color="808080"><strike>'.$killed3.'</strike></font><br>';
-		return $killed4;
-		}	
 	
 	public function bar_out($num,$value,$max,$text,$tooltip) {
 		if(empty($tooltip)) return $this->jquery->ProgressBar('eq2progresstle_'.unique_id(), 0, array(
