@@ -464,59 +464,59 @@ class eq2progresstle_portal extends portal_generic {
 		if ($tacid == '4101909069') {$contested = $contested + 1; 
 		$cont9 = $tkdate.'<font color="808080"><strike>Vallon Zek</strike></font><br>';}
 		if ($tacid == '2371639852') {$veeshan = $veeshan + 1; 
-		$tov1 = '<font color="808080"><strike>Bristlebane</strike></font><br>';}
+		$tov1 = $tkdate.'<font color="808080"><strike>Bristlebane</strike></font><br>';}
 		if ($tacid == '2828051041') {$veeshan = $veeshan + 1; 
-		$tov2 = '<font color="808080"><strike>Draazak the Ancient</strike></font><br>';}
+		$tov2 = $tkdate.'<font color="808080"><strike>Draazak the Ancient</strike></font><br>';}
 		if ($tacid == '3607119179') {$veeshan = $veeshan + 1; 
-		$tov3 = '<font color="808080"><strike>Exarch Lorokai the Unliving</strike></font><br>';}
+		$tov3 = $tkdate.'<font color="808080"><strike>Exarch Lorokai the Unliving</strike></font><br>';}
 		if ($tacid == '3194637595') {$veeshan = $veeshan + 1; 
-		$tov4 = '<font color="808080"><strike>Fabled Mutagenic Outcast</strike></font><br>';}
+		$tov4 = $tkdate.'<font color="808080"><strike>Fabled Mutagenic Outcast</strike></font><br>';}
 		if ($tacid == '554855277')  {$veeshan = $veeshan + 1; 
-		$tov5 = '<font color="808080"><strike>Fabled Three Princes</strike></font><br>';}
+		$tov5 = $tkdate.'<font color="808080"><strike>Fabled Three Princes</strike></font><br>';}
 		if ($tacid == '1344069514') {$veeshan = $veeshan + 1; 
-		$tov6 = '<font color="808080"><strike>Fabled Vyemm & Alzid Prime</strike></font><br>';}
+		$tov6 = $tkdate.'<font color="808080"><strike>Fabled Vyemm & Alzid Prime</strike></font><br>';}
 		if ($tacid == '1089000969') {$veeshan = $veeshan + 1; 
-		$tov7 = '<font color="808080"><strike>Roehn Theer - Ages End</strike></font><br>';}
+		$tov7 = $tkdate.'<font color="808080"><strike>Roehn Theer - Ages End</strike></font><br>';}
 		if ($tacid == '1400749304') {$veeshan = $veeshan + 1; 
-		$tov8 = '<font color="808080"><strike>Roehn Theer - Ages End (HM)</strike></font><br>';}
+		$tov8 = $tkdate.'<font color="808080"><strike>Roehn Theer - Ages End (HM)</strike></font><br>';}
 		if ($tacid == '3296875551') {$veeshan = $veeshan + 1; 
-		$tov9 = '<font color="808080"><strike>The Crumbling Emperor</strike></font><br>';}
+		$tov9 = $tkdate.'<font color="808080"><strike>The Crumbling Emperor</strike></font><br>';}
 		if ($tacid == '1302823374') {$veeshan = $veeshan + 1; 
-		$tov10 = '<font color="808080"><strike>Vulak\'Aerr the Dreadscale</strike></font><br>';}
+		$tov10 = $tkdate.'<font color="808080"><strike>Vulak\'Aerr the Dreadscale</strike></font><br>';}
 		if ($tacid == '616943266')  {$veeshan = $veeshan + 1; 
-		$tov11 = '<font color="808080"><strike>Zlandicar</strike></font><br>';}
+		$tov11 = $tkdate.'<font color="808080"><strike>Zlandicar</strike></font><br>';}
 		if ($tacid == '3928176072') {$altar = $altar + 1; 
-		$aom1 = '<font color="808080"><strike>Arch Lich Rhag\'Zadune</strike></font><br>';}
+		$aom1 = $tkdate.'<font color="808080"><strike>Arch Lich Rhag\'Zadune</strike></font><br>';}
 		if ($tacid == '3296712239') {$altar = $altar + 1; 
-		$aom2 = '<font color="808080"><strike>Baz the Illusionist</strike></font><br>';}
+		$aom2 = $tkdate.'<font color="808080"><strike>Baz the Illusionist</strike></font><br>';}
 		if ($tacid == '1748957509') {$altar = $altar + 1; 
-		$aom3 = '<font color="808080"><strike>Captain Krasnok</strike></font><br>';}
+		$aom3 = $tkdate.'<font color="808080"><strike>Captain Krasnok</strike></font><br>';}
 		if ($tacid == '116845928')  {$altar = $altar + 1; 
-		$aom4 = '<font color="808080"><strike>Construct of Malice</strike></font><br>';}
+		$aom4 = $tkdate.'<font color="808080"><strike>Construct of Malice</strike></font><br>';}
 		if ($tacid == '1849147944') {$altar = $altar + 1; 
-		$aom5 = '<font color="808080"><strike>Grethah the Frenzied</strike></font><br>';}
+		$aom5 = $tkdate.'<font color="808080"><strike>Grethah the Frenzied</strike></font><br>';}
 		if ($tacid == '1475875915') {$altar = $altar + 1; 
-		$aom6 = '<font color="808080"><strike>Kildiun the Drunkard</strike></font><br>';}
+		$aom6 = $tkdate.'<font color="808080"><strike>Kildiun the Drunkard</strike></font><br>';}
 		if ($tacid == '19578004')   {$altar = $altar + 1; 
-		$aom7 = '<font color="808080"><strike>Malkonis D\'Morte</strike></font><br>';}
+		$aom7 = $tkdate.'<font color="808080"><strike>Malkonis D\'Morte</strike></font><br>';}
 		if ($tacid == '99686993')   {$altar = $altar + 1; 
-		$aom8 = '<font color="808080"><strike>Malkonis D\'Morte (Challenge)</strike></font><br>';}
+		$aom8 = $tkdate.'<font color="808080"><strike>Malkonis D\'Morte (Challenge)</strike></font><br>';}
 		if ($tacid == '2955610207') {$altar = $altar + 1; 
-		$aom9 = '<font color="808080"><strike>Perador the Mighty</strike></font><br>';}
+		$aom9 = $tkdate.'<font color="808080"><strike>Perador the Mighty</strike></font><br>';}
 		if ($tacid == '1434280382' or $tacid == '2017956309'){$altar = $altar + 1; 
-		$aom10 = '<font color="808080"><strike>Primordial Ritualist Villandre V\'Zher</strike></font><br>';}
+		$aom10 = $tkdate.'<font color="808080"><strike>Primordial Ritualist Villandre V\'Zher</strike></font><br>';}
 		if ($tacid == '3742464779') {$altar = $altar + 1; 
-		$aom11 = '<font color="808080"><strike>The Crumbling Icon</strike></font><br>';}
+		$aom11 = $tkdate.'<font color="808080"><strike>The Crumbling Icon</strike></font><br>';}
 		if ($tacid == '3785130348') {$precipice = $precipice + 1; 
-		$pop1 = '<font color="808080"><strike>Brell Serilis</strike></font><br>';}
+		$pop1 = $tkdate.'<font color="808080"><strike>Brell Serilis</strike></font><br>';}
 		if ($tacid == '3312622728') {$precipice = $precipice + 1; 
-		$pop2 = '<font color="808080"><strike>Cazic-Thule</strike></font><br>';}
+		$pop2 = $tkdate.'<font color="808080"><strike>Cazic-Thule</strike></font><br>';}
 		if ($tacid == '1264497483') {$precipice = $precipice + 1; 
-		$pop3 = '<font color="808080"><strike>Fennin Ro</strike></font><br>';}
+		$pop3 = $tkdate.'<font color="808080"><strike>Fennin Ro</strike></font><br>';}
 		if ($tacid == '2302657105') {$precipice = $precipice + 1; 
-		$pop4 = '<font color="808080"><strike>Karana</strike></font><br>';}
+		$pop4 = $tkdate.'<font color="808080"><strike>Karana</strike></font><br>';}
 		if ($tacid == '3211824092') {$precipice = $precipice + 1; 
-		$pop5 = '<font color="808080"><strike>The Tribunal</strike></font><br>';}
+		$pop5 = $tkdate.'<font color="808080"><strike>The Tribunal</strike></font><br>';}
 		}
 		//cache it
 		$tkillslist = array($sh1,$sh2,$sh3,$sh4,$sh5,$sh6,$sh7,$sh8,$sh9,$shattered,
