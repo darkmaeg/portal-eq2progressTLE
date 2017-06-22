@@ -17,6 +17,7 @@
  * Modified Version of Hoofy's mybars progression module
  * This version populates the guild raid achievements from the Data Api
  * 
+ * V1.4 Revived for Fallen Gate - works on EQDKP+ V2.3 Only
  * V1.3 Fixed Bug with Date Killed
  * V1.2 Minor Fix
  * V1.1 Added Avatar Brell Serilius
@@ -31,7 +32,7 @@ class eq2progresstle_portal extends portal_generic {
 	protected static $path		= 'eq2progresstle';
 	protected static $data		= array(
 		'name'			=> 'EQ2 Progression TLE',
-		'version'		=> '1.3',
+		'version'		=> '1.4',
 		'author'		=> 'Darkmaeg',
 		'icon'			=> 'fa-bar-chart-o',
 		'contact'		=> EQDKP_PROJECT_URL,
@@ -596,7 +597,7 @@ class eq2progresstle_portal extends portal_generic {
 			$out .= $this->bar_out($i,$value,$max,$text,$tooltip);
 			} 
 			}
-			return $out;
+		return $out;
 		return $this->bar_out();
 	}
 	
@@ -622,7 +623,7 @@ class eq2progresstle_portal extends portal_generic {
 			'txtalign'	=> 'center',
 		)), 'content' => $tooltip);
 		$tooltipopts	= array_merge($tooltipopts, $arrPosition);
-		return new htooltip('eq2progresstle_tt'.$num, $tooltipopts);
+		return (new htooltip('eq2progresstle_tt'.$num, $tooltipopts))->output();
 	}
 }
 ?>
